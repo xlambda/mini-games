@@ -21,10 +21,6 @@ const ItemState = {
   MOVABLE: 2,
 };
 
-function useChess(initFEN) {
-  const chess = useRef(new ChineseChess(initFEN));
-  return chess.current;
-}
 
 function getImage(url) {
   return new Promise((resolve, reject) => {
@@ -433,7 +429,7 @@ function ChineseChessBoard (props) {
       <button onClick={() => go(index + 1)}>下一步</button>
       <button onClick={() => autoGo()}>自动走棋</button>
       <button onClick={() => stopAuto()}>停止</button>
-      <h6>棋谱</h6>
+      <h2>棋谱</h2>
       <MoveText moves={moves} go={go} index={index}/>
     </div>)
 }
